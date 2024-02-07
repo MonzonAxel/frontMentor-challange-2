@@ -29,16 +29,16 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
+}
 
 /*-------------------------------Header*/
 .header {
     display: flex;
     flex-direction: column;
     text-align: center;
+    max-width: 610px;
     margin-top: 80px;
-    margin-bottom: 50px;
 
 }
 
@@ -63,10 +63,7 @@ body{
 /*-------------------------------Cards*/
 
 .card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-top: 50px;
 }
 
 .section{
@@ -75,8 +72,7 @@ body{
     padding: 15px;
     border: 1px solid var( --very-light-gray);
     border-radius: 5px;
-    width: 330px;
-    margin-bottom: 50px;
+    margin: 0 15px 50px 15px;
     
 }
 
@@ -99,7 +95,7 @@ body{
 
 }
 
-/*---------------------------------Card-Colors*/
+/*---------------------------Card-Colors*/
 
 .section1{
     box-shadow: 0 -8px 5px -5px var(--cyan)
