@@ -14,24 +14,19 @@
     --grayish-blue: hsl(229, 6%, 66%);
     --very-light-gray: hsl(0, 4%, 85%);
 }
-
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body{
     font-family: 'Poppins', sans-serif;
 }
-
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
-
 /*-------------------------------Header*/
 .header {
     display: flex;
@@ -39,85 +34,109 @@ body{
     text-align: center;
     max-width: 610px;
     margin-top: 80px;
-
+    animation: up 1000ms;
 }
 
 .header_title{
     color: var(--grayish-blue);
-    font-weight: 200;
+    font-weight: 200; 
 }
-
 .header_title_second{
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-
 .header_subtitle{
     font-weight: 400;
     padding: 21px;
     color: var(--grayish-blue);
 }
-
-
 /*-------------------------------Cards*/
-
 .card{
     margin-top: 50px;
+    animation: down 500ms;
 }
-
 .section{
     display: flex;
     flex-direction: column;
+    background-color:hsl(0, 0%, 98%);
     padding: 15px;
     border: 1px solid var( --very-light-gray);
     border-radius: 5px;
-    margin: 0 15px 50px 15px;
-    
+    margin: 0 15px 50px 15px;  
 }
-
 .section_name{
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 10px;
 }
-
 .section_subtitle{
     font-weight: 400;
     font-size: 14px;
     color: var(--grayish-blue);
     margin-bottom: 20px;
 }
-
 .section_img{
     width: 60px;
     align-self: flex-end;
 
 }
-
 /*---------------------------Card-Colors*/
-
 .section1{
     box-shadow: 0 -8px 5px -5px var(--cyan)
 }
-
 .section2{
     box-shadow: 0 -8px 5px -5px var(--red)
 }
-
 .section3{
     box-shadow: 0 -8px 5px -5px var(--orange)
 }
-
 .section4{
     box-shadow: 0 -8px 5px -5px var(--blue)
 }
-
 /*------------------------------Footer*/
-
-.attribution { font-size: 11px; 
+.footer{
+    font-size: 11px; 
     text-align: center; 
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+/*--------------------->=894-----------------------*/
+@media(width>=894px){
+    .card{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 976px;
+    }
+}
+/*------------------->894---------------------*/
+@media (width >= 1440px){
+    .card{
+        grid-template-columns: repeat(3,1fr);
+        max-width: 1080px;
+    }
+    .section1{
+        grid-column: 1/2;
+        grid-row: 1/3;
+        align-self: center;
+    }
+    .section2{
+        margin-top: 25px;
+    }
+    .section4{
+        grid-column: 3/-1;
+        grid-row: 1/3;
+        align-self: center;
+    }
+}
+/*-----------------------------------------Animations*/
+
+@keyframes up {
+    0%{transform: translateY(-500px);}
+    100%{transform: translateY(0px);}
+}
+@keyframes down {
+    0%{transform: translateY(500px);}
+    100%{transform: translateY(0px);}
 }
